@@ -6,11 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class AWSJsonValidator implements JsonValidator{
-    private static final Logger logger = LoggerFactory.getLogger(AWSJsonValidator.class);
-    private boolean isJsonNotEmpty(String jsonData) {
-        return jsonData != null && !jsonData.isEmpty();
-    }
+public class AWSRolePolicyJsonValidator implements JsonValidator{
+    private static final Logger logger = LoggerFactory.getLogger(AWSRolePolicyJsonValidator.class);
+
     private boolean hasRequiredFields(JsonNode jsonNode) {
         return jsonNode.has("PolicyDocument")
                 && jsonNode.has("PolicyName")
@@ -22,11 +20,8 @@ public class AWSJsonValidator implements JsonValidator{
                 && jsonNode.get("PolicyDocument").get("Statement").isArray();
     }
     @Override
-    public boolean validateJson(JsonNode jsonNode, String jsonData) {
+    public boolean validateJson(JsonNode jsonNode) {
         try{
-            if(!isJsonNotEmpty(jsonData)){
-                throw new IllegalArgumentException("JSON data is empty or null");
-            }
             if(!hasRequiredFields(jsonNode)){
                 throw new IllegalArgumentException("Required fields are missing in the JSON.");
             }
