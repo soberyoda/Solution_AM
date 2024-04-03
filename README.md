@@ -13,11 +13,9 @@
 </ul>
 
 ### Maven dependencies: (from [MVN REPOSITORY](https://mvnrepository.com/))
-<code>
-<div>
 
+```diff
     <dependencies>
-
         <!-- JACKSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -29,7 +27,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.17.0</version>
         </dependency>
-
         <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
@@ -43,8 +40,5 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
-</div>
-</code>
+```
