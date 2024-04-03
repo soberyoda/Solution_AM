@@ -1,5 +1,5 @@
 package Interfaces;
 
 public interface JsonValidator {
-    boolean validate(String jsonData);
+    boolean validateJson(String jsonData);
 }
