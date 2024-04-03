@@ -1,3 +1,5 @@
+package AWSRolePolicy;
+
 import Interfaces.JsonValidator;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;

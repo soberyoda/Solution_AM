@@ -1,3 +1,5 @@
+package AWSRolePolicy;
+
 import Interfaces.JsonValidator;
 import Interfaces.PolicyNameValidator;
 import com.fasterxml.jackson.databind.ObjectMapper;
