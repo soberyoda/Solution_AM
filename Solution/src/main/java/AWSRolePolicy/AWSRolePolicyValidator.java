@@ -28,6 +28,22 @@ public class AWSRolePolicyValidator{
         }
     }
 
+    public boolean validate(String src){
+        if(!jsonValidator.isJsonValid(parse(src))) return false;
+        JsonNode node = parse(src);
+        assert node != null;
+        if(!policyNameValidator.isValidPolicyName(node.get("PolicyName").asText())) return false;
+        JsonNode statements = node.path("PolicyDocument").path("Statement");
+        for(JsonNode statement : statements){
+            if(!statement.has("Resource")){
+                return false;
+            }
+            String resource = statement.path("Resource").asText();
+            if(resource.equals("*")) return false;
+        }
+        return true;
+    }
+
 
 
 }

@@ -17,10 +17,11 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
     private boolean haveFieldsAppropriateTypes(JsonNode jsonNode) {
         return jsonNode.get("PolicyDocument").isObject()
                 && jsonNode.get("PolicyName").isTextual()
-                && jsonNode.get("PolicyDocument").get("Statement").isArray();
+                && jsonNode.get("PolicyDocument").get("Statement").isArray()
+                && jsonNode.get("PolicyDocument").get("Statement").size() == 0;
     }
     @Override
-    public boolean validateJson(JsonNode jsonNode) {
+    public boolean isJsonValid(JsonNode jsonNode) {
         try{
             if(!hasRequiredFields(jsonNode)){
                 throw new IllegalArgumentException("Required fields are missing in the JSON.");
