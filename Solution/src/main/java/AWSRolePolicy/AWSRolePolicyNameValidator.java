@@ -20,6 +20,7 @@ public class AWSRolePolicyNameValidator implements PolicyNameValidator {
             }
             return true;
         }catch (IllegalArgumentException e){
+            e.printStackTrace();
             return false;
         }
     }

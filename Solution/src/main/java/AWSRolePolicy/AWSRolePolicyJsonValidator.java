@@ -28,6 +28,7 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
             }
             return true;
         }catch (IllegalArgumentException e){
+            e.printStackTrace();
             return false;
         }
     }
