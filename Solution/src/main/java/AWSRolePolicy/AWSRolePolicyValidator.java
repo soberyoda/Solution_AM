@@ -11,7 +11,6 @@ public class AWSRolePolicyValidator{
     public AWSRolePolicyValidator(JsonValidator jsonValidator, PolicyNameValidator policyNameValidator){
         this.jsonValidator = jsonValidator;
         this.policyNameValidator = policyNameValidator;
-
     }
     public boolean validate(String src){
         if(!jsonValidator.isJsonValid(JsonParser.parse(src))) return false;
