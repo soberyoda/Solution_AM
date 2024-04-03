@@ -11,8 +11,9 @@
     <li>JUnit 4.13.2</li>
     <li>Jackson 2.17.0</li>
 </ul>
+<details><summary><b>Maven dependencies</b></summary>
 
-### Maven dependencies: (from [MVN REPOSITORY](https://mvnrepository.com/))
+#### [From MVN REPOSITORY](https://mvnrepository.com/)  
 
 ```diff
     <dependencies>
@@ -42,3 +43,7 @@
         </dependency>
     </dependencies>
 ```
+</details>
+
+# Usage 
+<details><summary><b>How to install Java?</b></summary></details>
