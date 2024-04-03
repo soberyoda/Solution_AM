@@ -10,7 +10,7 @@ public class Main {
         String content = JsonToStringFromFile.readFile("Solution/src/main/resources/validJson.json");
         JsonValidator jsonValidator = new AWSRolePolicyJsonValidator();
         PolicyNameValidator policyNameValidator = new AWSRolePolicyNameValidator();
-        AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(policyNameValidator, jsonValidator);
+        AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(jsonValidator, policyNameValidator);
         System.out.println(awsRolePolicyValidator.validate(content));
     }
 }
