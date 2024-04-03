@@ -6,8 +6,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 
 public class AWSRolePolicyJsonValidator implements JsonValidator{
-//    private static final Logger logger = LoggerFactory.getLogger(AWSRolePolicyJsonValidator.class);
-
     private boolean hasRequiredFields(JsonNode jsonNode) {
         return jsonNode.has("PolicyDocument")
                 && jsonNode.has("PolicyName")
@@ -30,7 +28,6 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
             }
             return true;
         }catch (IllegalArgumentException e){
-//            logger.error("Validation failed: " + e.getMessage());
             return false;
         }
     }

@@ -1,13 +1,10 @@
 package AWSRolePolicy;
 
 import Interfaces.PolicyNameValidator;
-
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AWSRolePolicyNameValidator implements PolicyNameValidator {
-//    private static final Logger logger = LoggerFactory.getLogger(AWSRolePolicyNameValidator.class);
     @Override
     public boolean isValidPolicyName(String policyName) {
         try {
@@ -23,7 +20,6 @@ public class AWSRolePolicyNameValidator implements PolicyNameValidator {
             }
             return true;
         }catch (IllegalArgumentException e){
-//            logger.error("Policy name validation failed" + e.getMessage());
             return false;
         }
     }
