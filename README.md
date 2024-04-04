@@ -1,4 +1,37 @@
-# Tech Stack: 
+# Project Description 
+<details><summary><b>Exercise</b></summary>
+<div>
+    <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQHI_oAFXfMVqhYKwKj61Yxsf_z98qOtwdo5Cs5S4rAQ&s" alt="Remitly" title="Remitly"/>
+</div>
+Exercise: 
+Write a method verifying the input JSON data. Input data format is defined as AWS::IAM::Role Policy - definition and example (<a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-role-policy.html">AWS IAM Role JSON definition and example</a>). Input JSON might be read from a file. 
+Method shall return logical false if an input JSON Resource field contains a single asterisk and true in any other case.
+
+```diff
+    {
+    "PolicyName": "root",
+    "PolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "IamListAccess",
+                "Effect": "Allow",
+                "Action": [
+                    "iam:ListRoles",
+                    "iam:ListUsers"
+                ],
+                "Resource": "*"
+            }
+        ]
+    }
+}
+```
+</details>
+<details><summary><b>My Solution and observations</b></summary>
+</details>
+
+# Tech Stack:
+<details><summary><b>Stack</b></summary>
 
 <div>
 	<img width="50" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png" alt="Java" title="Java"/>
@@ -45,6 +78,7 @@
     </dependencies>
 ```
 </details>
+</details>
 
 # Usage 
 <details><summary><b>How to install Java? (JDK)</b></summary>
@@ -83,4 +117,5 @@
 </details>
 <details><summary><b>How To run Java Program Using The Terminal?</b></summary>
 </details>
-
+<details><summary><b>How To run program using VSM or IntelliJ?</b></summary>
+</details>
