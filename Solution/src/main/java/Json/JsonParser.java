@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 
 public class JsonParser {
     private static final ObjectMapper objectMapper = new ObjectMapper();
-    public static String readFile(String jsonFilePath) {
+    private static String readFile(String jsonFilePath) {
         if(jsonFilePath == null || jsonFilePath.isEmpty()){
             throw new IllegalArgumentException("File path cannot be null or empty.");
         }
@@ -29,9 +29,10 @@ public class JsonParser {
         return jsonData != null && !jsonData.isEmpty();
     }
     public static JsonNode parse(String src){
-        if(!isJsonNotEmpty(src)) throw new IllegalArgumentException("JSON data is empty or null");
+        String content = readFile(src);
+        if(!isJsonNotEmpty(content)) throw new IllegalArgumentException("JSON data is empty or null");
         try {
-            return objectMapper.readTree(src);
+            return objectMapper.readTree(content);
         }catch (JsonProcessingException e){
             e.printStackTrace();
             return null;
