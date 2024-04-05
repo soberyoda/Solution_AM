@@ -1,4 +1,4 @@
-# Project Description 
+## Project Description 
 <details><summary><b>Exercise</b></summary>
 <div>
     <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQHI_oAFXfMVqhYKwKj61Yxsf_z98qOtwdo5Cs5S4rAQ&s" alt="Remitly" title="Remitly"/>
@@ -8,6 +8,7 @@ Write a method verifying the input JSON data. Input data format is defined as AW
 Method shall return logical false if an input JSON Resource field contains a single asterisk and true in any other case.
 
 ```diff
+JSON 
     {
     "PolicyName": "root",
     "PolicyDocument": {
@@ -30,7 +31,7 @@ Method shall return logical false if an input JSON Resource field contains a sin
 <details><summary><b>My Solution and observations</b></summary>
 </details>
 
-# Tech Stack:
+## Tech Stack:
 <details><summary><b>Stack</b></summary>
 
 <div>
@@ -39,7 +40,7 @@ Method shall return logical false if an input JSON Resource field contains a sin
 	<img width="50" src="https://user-images.githubusercontent.com/25181517/117533873-484d4480-afef-11eb-9fad-67c8605e3592.png" alt="JUnit" title="JUnit"/>
 </div>
 <ul>
-    <li>Java 17</li>
+    <li>Java Oracle OpenJDK version 17.0.10</li>
     <li>Maven 3 (Version 3.8.1)</li>
     <li>JUnit 4.13.2, junit.jupiter 5.10.2</li>
     <li>Jackson 2.17.0</li>
@@ -80,8 +81,12 @@ Method shall return logical false if an input JSON Resource field contains a sin
 </details>
 </details>
 
-# Usage 
-<details><summary><b>How to install Java? (JDK)</b></summary>
+## Usage 
+<details><summary><b>How to run project?</b></summary>
+
+#### Most Common Questions
+
+<details><summary><b>How to install Java? (JDK 17)</b></summary>
 <div >
 	<img width="50" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Oracle_Logo.svg" alt="Oracle" title="Oracle"/>
 </div>
@@ -115,7 +120,4 @@ Method shall return logical false if an input JSON Resource field contains a sin
     <li>Press Enter to create your local clone.</li>
 </ul>
 </details>
-<details><summary><b>How To run Java Program Using The Terminal?</b></summary>
-</details>
-<details><summary><b>How To run program using VSM or IntelliJ?</b></summary>
 </details>
