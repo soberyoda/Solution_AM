@@ -83,6 +83,18 @@ JSON
 
 ## Usage 
 <details><summary><b>How to run project?</b></summary>
+<ol>
+    <li>Copy or download the repository with the code to your computer.</li>
+    <code>git@github.com:soberyoda/AWSIAM_Internship_2024.git</code>
+    <li>Make sure that the required tools are installed on your computer.</li> 
+<ul>
+        <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk17">JDK Development Kit 17.0.10</a></li>
+        <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a>
+</ul>
+    
+
+</ol>
+
 
 #### Most Common Questions
 
