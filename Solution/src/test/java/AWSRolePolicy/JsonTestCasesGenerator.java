@@ -36,4 +36,14 @@ public class JsonTestCasesGenerator {
         testCases.add("{\"PolicyName\":\"TestPolicy4\",\"PolicyDocument\":{\"Statement\": {} }}");
         return testCases;
     }
+    public static List<String> generateTestCasesHaveInvalidPolicyName(){
+        List<String> testCases = new ArrayList<>();
+        testCases.add("{\"PolicyName\": [] ,\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"*\"}]}}");
+        testCases.add("{\"PolicyName\":\"''\",\"PolicyDocument\":[{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"***\"}]}]}");
+        testCases.add("{\"PolicyName\":\"TestPolicy3!\",\"PolicyDocument\":{\"Statement\":[]}}");
+        testCases.add("{\"PolicyName\":\"##\",\"PolicyDocument\":{\"Statement\": null }}");
+        testCases.add("{\"PolicyName\": {} ,\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\"}]}}");
+        testCases.add("{\"PolicyName\":\"A#A!\",\"PolicyDocument\":{\"Statement\": {} }}");
+        return testCases;
+    }
 }
