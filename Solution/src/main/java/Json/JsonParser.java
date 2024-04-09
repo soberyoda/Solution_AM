@@ -37,7 +37,7 @@ public class JsonParser{
             return objectMapper.readTree(content);
         }catch (JsonProcessingException e){
             e.printStackTrace();
-            return null;
+            throw new RuntimeException();
         }
     }
 }
