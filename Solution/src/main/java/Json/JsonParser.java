@@ -8,10 +8,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JsonParser {
     private static final ObjectMapper objectMapper = new ObjectMapper();
-    private static String readFile(String jsonFilePath) {
+    public static String readFile(String jsonFilePath) {
         if(jsonFilePath == null || jsonFilePath.isEmpty()){
             throw new IllegalArgumentException("File path cannot be null or empty.");
         }
@@ -20,12 +22,15 @@ public class JsonParser {
             throw new IllegalArgumentException("File does not exist or is not a regular file.");
         }
         try {
-            return new String(Files.readAllBytes(path));
+            Stream<String> lines = Files.lines(path);
+            String data = lines.collect(Collectors.joining("\n"));
+            lines.close();
+            return data;
         } catch (IOException e) {
             throw new RuntimeException();
         }
     }
-    private static boolean isJsonNotEmpty(String jsonData) {
+    public static boolean isJsonNotEmpty(String jsonData) {
         return jsonData != null && !jsonData.isEmpty();
     }
     public static JsonNode parse(String src){
