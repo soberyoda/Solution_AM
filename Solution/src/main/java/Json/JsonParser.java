@@ -1,5 +1,6 @@
 package Json;
 
+import Interfaces.PathValidator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,16 +12,12 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class JsonParser {
+public class JsonParser{
     private static final ObjectMapper objectMapper = new ObjectMapper();
     public static String readFile(String jsonFilePath) {
-        if(jsonFilePath == null || jsonFilePath.isEmpty()){
-            throw new IllegalArgumentException("File path cannot be null or empty.");
-        }
+        PathValidator pathValidator = new JsonPathValidator();
+        if(!pathValidator.isPathValid(jsonFilePath)) throw new IllegalArgumentException();
         Path path = Paths.get(jsonFilePath);
-        if(!Files.exists(path) || !Files.isRegularFile(path)){
-            throw new IllegalArgumentException("File does not exist or is not a regular file.");
-        }
         try {
             Stream<String> lines = Files.lines(path);
             String data = lines.collect(Collectors.joining("\n"));
