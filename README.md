@@ -1,3 +1,17 @@
+## How to use this README:
+Click the symbol or summary to expand the topic you're interested in.
+<details><summary><b>Tutorial</b></summary>
+    <b>Have Fun!</b>
+<img align = 'left' src = "https://media.tenor.com/0OhWk4p9qO4AAAAj/beso-joda.gif" width = "50">
+</details><br/>
+
+### Go to: 
+[Project Description]()
+[How to run AWSIAM]()
+[How to run AWSIAM - IDE]()
+[How to run AWSIAM - Terminal]()
+[Documentation]()
+
 ## Project Description 
 <details><summary><b>Exercise</b></summary>
 <div>
@@ -27,12 +41,8 @@ JSON
     }
 }
 ```
-</details>
-<details><summary><b>My Solution and observations</b></summary>
-</details>
-
 ## Tech Stack:
-<details><summary><b>Stack</b></summary>
+<details><summary><b>Stack</b></summary></details>
 
 <div>
 	<img width="50" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png" alt="Java" title="Java"/>
@@ -40,7 +50,7 @@ JSON
 	<img width="50" src="https://user-images.githubusercontent.com/25181517/117533873-484d4480-afef-11eb-9fad-67c8605e3592.png" alt="JUnit" title="JUnit"/>
 </div>
 <ul>
-    <li>Java Oracle OpenJDK version 17.0.10</li>
+    <li>Java Oracle OpenJDK version 21</li>
     <li>Maven 3 (Version 3.8.1)</li>
     <li>JUnit 4.13.2, junit.jupiter 5.10.2</li>
     <li>Jackson 2.17.0</li>
@@ -81,55 +91,93 @@ JSON
 </details>
 </details>
 
-## Usage 
-<details><summary><b>How to run project?</b></summary>
-<ol>
-    <li>Copy or download the repository with the code to your computer.</li>
-    <code>git@github.com:soberyoda/AWSIAM_Internship_2024.git</code>
-    <li>Make sure that the required tools are installed on your computer.</li> 
+## How to run AWSIAM
+### IDE
+
+1. Clone GitHub repository
+   [GitHub Docs - Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+2. Make sure that the required tools are installed on your computer.
+<ul>
+        <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk21">JDK Development Kit 21</a></li>
+        <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a></li>
+</ul>
+
+3. Open the project in IntelliJ IDEA (preferred) or in another integrated development environment.
+4. Go to the Main class <code>Solution/src/main/java/Main.java</code>, set the appropriate paths to your JSON file, and click 'Run'.
+
+f.ex: 
+```diff
+public class Main {
+    public static void main(String...args){
+        String pathToJson = "Solution/src/main/resources/validJson.json"; <-- PATH TO YOUR JSON FILE
+        JsonValidator jsonValidator = new AWSRolePolicyJsonValidator();
+        PolicyNameValidator policyNameValidator = new AWSRolePolicyNameValidator();
+        AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(jsonValidator, policyNameValidator);
+        System.out.println(awsRolePolicyValidator.validate(pathToJson));
+    }
+}
+```
+### Terminal
+1. Download [Fat-jar](https://github.com/soberyoda/AWSIAM_Internship_2024/blob/main/Solution/Solution-1.0-SNAPSHOT-jar-with-dependencies.jar)
+2. Make sure that the required tools are installed on your computer.
 <ul>
         <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk17">JDK Development Kit 17.0.10</a></li>
-        <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a>
+        <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a></li>
 </ul>
-    
 
-</ol>
+3. Open the terminal
+4. Navigate to the location of the .jar file
+5. run <code>java -jar Solution-1.0-SNAPSHOT-jar-with-dependencies.jar absolutePathToJsonFile</code>
 
+```diff
+public class Main {
+    public static void main(String...args){
+        String pathToJson = args[0];
+        JsonValidator jsonValidator = new AWSRolePolicyJsonValidator();
+        PolicyNameValidator policyNameValidator = new AWSRolePolicyNameValidator();
+        AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(jsonValidator, policyNameValidator);
+        System.out.println(awsRolePolicyValidator.validate(pathToJson));
+    }
+}
+```
+Example result for validJson2.json:
+```diff 
+D:\AWSIAM_Internship_2024\Solution>java -jar Solution-1.0-SNAPSHOT-jar-with-dependencies.jar D:\AWSIAM_Internship_2024\Solution\src\test\java\resources\validJson2.json
+true
+```
 
-#### Most Common Questions
-
-<details><summary><b>How to install Java? (JDK 17)</b></summary>
-<div >
-	<img width="50" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Oracle_Logo.svg" alt="Oracle" title="Oracle"/>
-</div>
-
-[Installation of the JDK on Linux Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8)
-
-[Installation of the JDK on macOS](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-macos.html#GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE)
-
-[Installation of the JDK on Microsoft Windows Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
-
+## Documentation
+<details>
+<summary><b>Interfaces</b></summary>
+<img width=auto src="assets/Interfaces.png" alt="Interfaces" title="Interfaces"/>
 </details>
+<details>
+<summary><b>Json package</b></summary>
+<img width=auto src="./assets/JsonPkg.png" alt="Json package" title="Json package"/>
+</details>
+<details>
+<summary><b>AWSRolePolicy package</b></summary>
+<img width=auto src="./assets/AWSRolePolicy.png" alt="AWSRolePolicy" title="AWSRolePolicy"/>
+</details>
+<details>
+<summary><b>Project Diagram</b></summary>
+<img width=auto src="./assets/Doc.png" alt="Project Diagram" title="Project Diagram"/>
+</details>
+<details>
+<summary><b>Tests</b></summary>
 
-<details><summary><b>How to clone GitHub repository?</b></summary>
-<div >
-	<img width="50" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"/>
-</div>
+### Caution! In some tests, it is necessary to change paths (absolute paths to JSON files). These tests are appropriately marked.
+```diff
+Solution/src/test/java/AWSRolePolicy/AWSRolePolicyValidatorTest.java
 
-[Source: GitHub Docs - Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-<ul>
-    <li>On GitHub.com, navigate to the main page of the repository.</li>
-    <li>Above the list of files, click <> Code.</li>
-    <p>
-      <img src="./assets/clone_repo.png" alt="Clone repo" width="554">
-    </p>
-    <li>Copy the URL for the repository</li>
-    <code>git@github.com:soberyoda/AWSIAM_Internship_2024.git</code>
-    <li>Open Git Bash.</li>
-    <li>Change the current working directory to the location where you want the cloned directory.</li>
-    <li>Type <code>git clone</code>, and then paste the URL you copied earlier. </li>
-    <code>git clone git@github.com:soberyoda/AWSIAM_Internship_2024.git </code>
-    <li>Press Enter to create your local clone.</li>
-</ul>
+Solution/src/test/java/Json/JsonParserTest.java
+
+Solution/src/test/java/Json/JsonPathValidatorTest.java
+```
+<img width=auto src="./assets/test.png" alt="tests" title="tests"/>
+<details>
+<summary><b><code>mvn test</code> results</b></summary>
+<img width=auto src="./assets/testresults.png" alt="tests results" title="tests results"/>
 </details>
 </details>
