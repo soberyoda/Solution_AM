@@ -7,7 +7,7 @@ import Json.JsonParser;
 
 public class Main {
     public static void main(String...args){
-        String pathToJson = args[0];
+        String pathToJson = args[0]; // <-- OR PATH TO YOUR JSON FILE
         JsonValidator jsonValidator = new AWSRolePolicyJsonValidator();
         PolicyNameValidator policyNameValidator = new AWSRolePolicyNameValidator();
         AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(jsonValidator, policyNameValidator);

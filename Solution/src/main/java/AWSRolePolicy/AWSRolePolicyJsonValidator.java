@@ -15,7 +15,7 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
         return jsonNode.get("PolicyDocument").isObject()
                 && jsonNode.get("PolicyName").isTextual()
                 && jsonNode.get("PolicyDocument").get("Statement").isArray()
-                && jsonNode.get("PolicyDocument").get("Statement").size() != 0;
+                && !jsonNode.get("PolicyDocument").get("Statement").isEmpty();
 //                && jsonNode.get("PolicyDocument").get("Statement").get(0).isObject();
     }
     @Override

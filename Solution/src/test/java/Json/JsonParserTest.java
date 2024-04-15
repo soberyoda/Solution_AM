@@ -10,10 +10,13 @@ public class JsonParserTest {
     private String validPath;
     private String validJson;
 
+    /*
+     YOU HAVE TO CHANGE PATH !
+    */
     @Before
     public void setUp(){
         invalidPath = "///";
-        validPath = "D:\\AWSIAM_Internship_2024\\Solution\\src\\test\\java\\resources\\validJson.json";
+        validPath = "D:\\AWSIAM_Internship_2024\\Solution\\src\\test\\java\\resources\\validJson.json"; // <-- Yo have to change path!
         validJson =  "{\n" +
                 "    \"PolicyName\": \"root\",\n" +
                 "    \"PolicyDocument\": {\n" +

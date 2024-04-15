@@ -22,7 +22,7 @@ public class AWSRolePolicyValidator{
             if(!statement.has("Resource")){
                 return false;
             }
-            String resource = statement.path("Resource").asText();
+            String resource = statement.path("Resource").asText().trim(); // single asterisk
             if(resource.equals("*")) return false;
         }
         return true;
