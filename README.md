@@ -6,11 +6,13 @@ Click the symbol or summary to expand the topic you're interested in.
 </details><br/>
 
 ### Go to: 
-[Project Description]()
-[How to run AWSIAM]()
-[How to run AWSIAM - IDE]()
-[How to run AWSIAM - Terminal]()
-[Documentation]()
+<ul>
+<li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#project-description">Project Description</a></li>
+<li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#how-to-run-awsiam">How to run AWSIAM</a></li>
+<li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#ide">How to run AWSIAM - IDE</a></li>
+<li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#terminal">How to run AWSIAM - Terminal</a></li>
+<li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#documentation">Documentation</a></li>
+</ul>
 
 ## Project Description 
 <details><summary><b>Exercise</b></summary>
