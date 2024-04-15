@@ -124,7 +124,7 @@ public class Main {
 1. Download [Fat-jar](https://github.com/soberyoda/AWSIAM_Internship_2024/blob/main/Solution/Solution-1.0-SNAPSHOT-jar-with-dependencies.jar)
 2. Make sure that the required tools are installed on your computer.
 <ul>
-        <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk17">JDK Development Kit 17.0.10</a></li>
+        <li><a href="https://www.oracle.com/java/technologies/downloads/#jdk21">JDK Development Kit 21</a></li>
         <li><a href="https://maven.apache.org/download.cgi">Apache Maven</a></li>
 </ul>
 
