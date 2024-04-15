@@ -11,7 +11,7 @@ public class AWSRolePolicyValidatorTest {
     @Test
     public void testValidPolicy() {
         AWSRolePolicyValidator validator = new AWSRolePolicyValidator(new AWSRolePolicyJsonValidator(), new AWSRolePolicyNameValidator());
-        assertTrue(validator.validate("D:\\AWSIAM_Internship_2024\\Solution\\src\\test\\java\\resources\\validJson.json"));
+        assertTrue(validator.validate("D:\\AWSIAM_Internship_2024\\Solution\\src\\test\\java\\resources\\validJson2.json"));
     }
 
     @Test
