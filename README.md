@@ -170,7 +170,7 @@ true
 </details>
 <details>
 <summary><b>Project Diagram</b></summary>
-<img width=auto src="./assets/Doc.png" alt="Project Diagram" title="Project Diagram"/>
+<img width=auto src="./assets/project.png" alt="Project Diagram" title="Project Diagram"/>
 </details>
 <details>
 <summary><b>Tests</b></summary>
@@ -183,7 +183,7 @@ Solution/src/test/java/Json/JsonParserTest.java
 
 Solution/src/test/java/Json/JsonPathValidatorTest.java
 ```
-<img width=auto src="./assets/test.png" alt="tests" title="tests"/>
+<img width=auto src="./assets/tests.png" alt="tests" title="tests"/>
 <details>
 <summary><b><code>mvn test</code> results</b></summary>
 <img width=auto src="./assets/testresults.png" alt="tests results" title="tests results"/>
