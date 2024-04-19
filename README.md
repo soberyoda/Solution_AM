@@ -151,7 +151,7 @@ public class Main {
 ```
 Example result for validJson2.json:
 ```diff 
-D:\AWSIAM_Internship_2024\Solution>java -jar Solution-1.0-SNAPSHOT-jar-with-dependencies.jar D:\AWSIAM_Internship_2024\Solution\src\test\java\resources\validJson2.json
+Policy Document: {"Version":"2012-10-17","Statement":[{"Sid":"IamListAccess","Effect":"Allow","Action":["iam:ListRoles","iam:ListUsers"],"Resource":"**"}]}
 true
 ```
 
