@@ -27,7 +27,6 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
     }
     public boolean validatePolicyDocument(JsonNode jsonNode){
         String policyDocument = jsonNode.get("PolicyDocument").toString();
-        System.out.println(policyDocument);
         System.out.println("Policy Document: " + policyDocument);
 
         String allowedCharsPattern = "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+";

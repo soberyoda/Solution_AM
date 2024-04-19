@@ -6,7 +6,7 @@ import Interfaces.PolicyNameValidator;
 
 public class Main {
     public static void main(String...args){
-        String pathToJson = "args[0]"; // <-- OR PATH TO YOUR JSON FILE
+        String pathToJson = args[0]; // <-- OR PATH TO YOUR JSON FILE
         JsonValidator jsonValidator = new AWSRolePolicyJsonValidator();
         PolicyNameValidator policyNameValidator = new AWSRolePolicyNameValidator();
         AWSRolePolicyValidator awsRolePolicyValidator = new AWSRolePolicyValidator(jsonValidator, policyNameValidator);

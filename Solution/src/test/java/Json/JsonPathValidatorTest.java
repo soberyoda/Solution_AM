@@ -16,7 +16,7 @@ public class JsonPathValidatorTest {
     public void setUp(){
         pathValidator = new JsonPathValidator();
         invalidPath = "///";
-        validPath = "D:\\AWSIAM_Internship_2024\\Solution\\src\\test\\java\\resources\\validJson.json"; // <-- You have to change Path!
+        validPath = "D:\\AWSIAM_Internship_2024\\Solution\\src\\main\\resources\\validJson.json"; // <-- You have to change Path!
     }
     @Test(expected = IllegalArgumentException.class)
     public void testIsPathValid_invalidPath() {
