@@ -29,7 +29,7 @@ public class JsonParserTest {
                 "                    \"iam:ListRoles\",\n" +
                 "                    \"iam:ListUsers\"\n" +
                 "                ],\n" +
-                "                \"Resource\": \"*\"\n" +
+                "                \"Resource\": [\"*\"]\n" +
                 "            }\n" +
                 "        ]\n" +
                 "    }\n" +
