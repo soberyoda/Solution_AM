@@ -6,7 +6,11 @@ Click the symbol or summary to expand the topic you're interested in.
 </details><br/>
 
 ###  Several initial assumptions
-The program checks if the Statement field contains Resource - even in the case of multiple Statement fields. If it does not contain it (assuming that the Resource field is required in this case), the program returns false. I assume that if the Resource field contains an array ["*"], it cannot have any other elements.
+The program checks if the Statement field contains Resource - 
+even in the case of multiple Statement fields. 
+If it does not contain it (assuming that the Resource field is required in this case), 
+the program returns false. I assume that if the Resource field contains an array ["*"],
+it cannot have any other elements (The array may have other elements, but it will still return false.).
 ### Go to: 
 <ul>
 <li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#project-description">Project Description</a></li>
