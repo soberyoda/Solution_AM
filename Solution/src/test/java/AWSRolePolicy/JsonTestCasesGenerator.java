@@ -7,11 +7,11 @@ public class JsonTestCasesGenerator {
     public static List<String> generateValidTestCases(){
         List<String> testCases = new ArrayList<>();
         testCases.add("{\"PolicyName\":\"TestPolicy\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"*\"}]}}");
-        testCases.add("{\"PolicyName\":\"TestPolicy2\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"***\"}]}}");
-        testCases.add("{\"PolicyName\":\"TestPolicy3\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"FJK\"}]}}");
-        testCases.add("{\"PolicyName\":\"TestPolicy4\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\"}]}}");
-        testCases.add("{\"PolicyName\":\"TestPolicy5\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\"}]}}");
-        testCases.add("{\"PolicyName\":\"TestPolicy4\",\"PolicyDocument\":{\"Statement\":[{\"Effect\":\"Allow\"}]}}");
+        testCases.add("{\"PolicyName\":\"TestPolicy2\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"FF\"}]}}");
+        testCases.add("{\"PolicyName\":\"TestPolicy3\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"res\"}]}}");
+        testCases.add("{\"PolicyName\":\"TestPolicy4\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Resource\":\"FF\"}]}}");
+        testCases.add("{\"PolicyName\":\"TestPolicy5\",\"PolicyDocument\":{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Deny\",\"Resource\":\"FF\"}]}}");
+        testCases.add("{\"PolicyName\":\"TestPolicy4\",\"PolicyDocument\":{\"Statement\":[{\"Effect\":\"Allow\",\"Resource\":\"FF\"}]}}");
 
         return testCases;
     }
