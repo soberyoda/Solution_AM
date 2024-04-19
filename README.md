@@ -5,6 +5,8 @@ Click the symbol or summary to expand the topic you're interested in.
 <img align = 'left' src = "https://media.tenor.com/0OhWk4p9qO4AAAAj/beso-joda.gif" width = "50">
 </details><br/>
 
+###  Several initial assumptions
+The program checks if the Statement field contains Resource - even in the case of multiple Statement fields. If it does not contain it (assuming that the Resource field is required in this case), the program returns false. I assume that if the Resource field contains an array ["*"], it cannot have any other elements.
 ### Go to: 
 <ul>
 <li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#project-description">Project Description</a></li>
