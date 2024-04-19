@@ -19,11 +19,17 @@ public class AWSRolePolicyValidator{
         if(!policyNameValidator.isValidPolicyName(node.get("PolicyName").asText())) return false;
         JsonNode statements = node.path("PolicyDocument").path("Statement");
         for(JsonNode statement : statements){
-            if(!statement.has("Resource")){
-                return false;
+            JsonNode resourceNode = statement.get("Resource");
+            if(resourceNode.isArray()){
+                for(JsonNode resource : resourceNode){
+                    if("*".equals(resource.asText().trim())){
+                        return false;
+                    }
+                }
+            } else {
+                String resource = resourceNode.asText().trim();
+                if(resource.equals("*")) return false;
             }
-            String resource = statement.path("Resource").asText().trim(); // single asterisk
-            if(resource.equals("*")) return false;
         }
         return true;
     }
