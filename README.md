@@ -12,8 +12,6 @@ If it does not contain it (assuming that the Resource field is required in this 
 the program returns false. I assume that if the Resource field contains an array ["*"],
 it cannot have any other elements (The array may have other elements, but it will still return false.).
 
-<br/>
-
 ### Edge cases: 
 
 The PolicyDocument must contain the Effect field. This field can only take 2 values - Allow or Deny.
