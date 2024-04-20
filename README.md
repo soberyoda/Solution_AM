@@ -68,8 +68,10 @@ JSON
     }
 }
 ```
+</details>
+
 ## Tech Stack:
-<details><summary><b>Stack</b></summary></details>
+<details><summary><b>Stack</b></summary>
 
 <div>
 	<img width="50" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png" alt="Java" title="Java"/>
@@ -82,6 +84,7 @@ JSON
     <li>JUnit 4.13.2, junit.jupiter 5.10.2</li>
     <li>Jackson 2.17.0</li>
 </ul>
+</details>
 <details><summary><b>Maven dependencies</b></summary>
 
 #### [From MVN REPOSITORY](https://mvnrepository.com/)
@@ -115,7 +118,6 @@ JSON
         </dependency>
     </dependencies>
 ```
-</details>
 </details>
 
 ## How to run AWSIAM
