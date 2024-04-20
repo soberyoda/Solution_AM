@@ -11,6 +11,26 @@ even in the case of multiple Statement fields.
 If it does not contain it (assuming that the Resource field is required in this case), 
 the program returns false. I assume that if the Resource field contains an array ["*"],
 it cannot have any other elements (The array may have other elements, but it will still return false.).
+
+<br/>
+
+### Edge cases: 
+
+The PolicyDocument must contain the Effect field. This field can only take 2 values - Allow or Deny.
+
+The PolicyName field must match a regular expression. <code>[\w+=,.@-]+</code>
+
+<code>Length Constraints: Minimum length of 1. Maximum length of 128.</code>
+
+Characters in the PolicyDocument must match a regular expression.  <code>[\u0009\u000A\u000D\u0020-\u00FF]+</code>
+
+<code>Length Constraints: Minimum length of 1. Maximum length of 131072.</code>
+
+The date format in the Version field must be preserved and comply with the format yyyy-mm-dd (or yyyy/mm/dd or yyyy mm dd). 
+
+The document fields must have specified types.
+
+The file path must be correct.
 ### Go to: 
 <ul>
 <li><a href="https://github.com/soberyoda/AWSIAM_Internship_2024?tab=readme-ov-file#project-description">Project Description</a></li>
