@@ -13,9 +13,22 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
                 && jsonNode.has("PolicyName")
                 && jsonNode.get("PolicyDocument").has("Statement");
     }
-    public boolean validateStatementEffects(JsonNode statementArray) {
+    public boolean validatePolicyDocument(JsonNode jsonNode){
+        String policyDocument = jsonNode.get("PolicyDocument").toString();
+        System.out.println("Policy Document: " + policyDocument);
+
+        String allowedCharsPattern = "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+";
+        Pattern pattern = Pattern.compile(allowedCharsPattern);
+        Matcher matcher = pattern.matcher(policyDocument);
+        boolean patternMatch = matcher.matches();
+        boolean notEmpty = !policyDocument.isEmpty();
+        boolean withinLength = policyDocument.length() <= 131072;
+        boolean isObject = jsonNode.get("PolicyDocument").isObject();
+        return patternMatch && notEmpty && withinLength && isObject;
+    }
+    public boolean validateStatementEffectsAndActions(JsonNode statementArray) {
         for (JsonNode statement : statementArray) {
-            if (!statement.has("Effect")) {
+            if (!statement.has("Effect") || !statement.has("Action")) {
                 return false;
             }
             String effect = statement.get("Effect").asText();
@@ -25,33 +38,23 @@ public class AWSRolePolicyJsonValidator implements JsonValidator{
         }
         return true;
     }
-    public boolean validatePolicyDocument(JsonNode jsonNode){
-        String policyDocument = jsonNode.get("PolicyDocument").toString();
-        System.out.println("Policy Document: " + policyDocument);
-
-        String allowedCharsPattern = "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+";
-        Pattern pattern = Pattern.compile(allowedCharsPattern);
-        Matcher matcher = pattern.matcher(policyDocument);
-        boolean patternMatch = matcher.matches();
-//        System.out.println("Pattern Match: " + patternMatch);
-
-        boolean notEmpty = !policyDocument.isEmpty();
-//        System.out.println("Not Empty: " + notEmpty);
-
-        boolean withinLength = policyDocument.length() <= 131072;
-//        System.out.println("Within Length: " + withinLength);
-
-        boolean isObject = jsonNode.get("PolicyDocument").isObject();
-//        System.out.println("Is Object: " + isObject);
-
-        return patternMatch && notEmpty && withinLength && isObject;
+    public boolean validateVersionFormat(JsonNode jsonNode){
+        String version = jsonNode.get("PolicyDocument").get("Version").asText();
+        String allowedPattern = "\\d{4}-\\d{2}-\\d{2}";
+        Pattern pattern = Pattern.compile(allowedPattern);
+        Matcher matcher = pattern.matcher(version);
+        if(!matcher.matches()){
+            System.out.println("matcher fail");
+        }
+        return matcher.matches();
     }
     public boolean haveFieldsAppropriateTypes(JsonNode jsonNode) {
         return validatePolicyDocument(jsonNode)
                 && jsonNode.get("PolicyName").isTextual()
                 && jsonNode.get("PolicyDocument").get("Statement").isArray()
                 && !jsonNode.get("PolicyDocument").get("Statement").isEmpty()
-                && validateStatementEffects(jsonNode.get("PolicyDocument").get("Statement"));
+                && validateStatementEffectsAndActions(jsonNode.get("PolicyDocument").get("Statement"))
+                && validateVersionFormat(jsonNode);
     }
     @Override
     public boolean isJsonValid(JsonNode jsonNode) {
